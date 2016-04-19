@@ -16,10 +16,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     override func viewWillAppear(animated: Bool) {
-//         = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     
     @IBOutlet weak var memeImageView: UIImageView!
+    
+    @IBOutlet weak var chooseButton: UIBarButtonItem!
+    
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     @IBAction func pickAnImage() {
         let pickerController = UIImagePickerController()

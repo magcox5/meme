@@ -57,12 +57,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chooseButton" destination="7sd-XT-vFr" id="ope-NF-U2n"/>
+                        <outlet property="chooseCamera" destination="fcV-aX-sig" id="q4K-A8-VF5"/>
                         <outlet property="memeImageView" destination="JBD-1N-hmq" id="YgD-PJ-tFF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="27" y="352"/>
+            <point key="canvasLocation" x="-261" y="183"/>
         </scene>
     </scenes>
     <resources>
