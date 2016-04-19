@@ -14,12 +14,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
+    override func viewWillAppear(animated: Bool) {
+//         = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+    }
     
     @IBOutlet weak var memeImageView: UIImageView!
     
     @IBAction func pickAnImage() {
         let pickerController = UIImagePickerController()
+        pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         pickerController.delegate = self
         self.presentViewController(pickerController, animated: true, completion:nil)
     }
@@ -35,5 +39,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func pickAnImageFromCamera (sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
 }
 
