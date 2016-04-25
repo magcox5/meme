@@ -8,24 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+
     let memeTextAttributes: [String: AnyObject] = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 3.0
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
+        NSStrokeWidthAttributeName : 2.0
     ]
 
+    struct Meme {
+        var topText: String
+        var bottomText: String
+        var memeImage: UIImage
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTitle.text = "Top"
-        bottomTitle.text = "Bottom"
+        topTitle.text = "TOP"
+        bottomTitle.text = "BOTTOM"
         topTitle.defaultTextAttributes = memeTextAttributes
         bottomTitle.defaultTextAttributes = memeTextAttributes
         topTitle.textAlignment = .Center
         bottomTitle.textAlignment = .Center
-    }
+        self.topTitle.delegate = self
+        self.bottomTitle.delegate = self
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addTapped"))
+     }
 
     override func viewWillAppear(animated: Bool) {
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
@@ -76,7 +85,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:))    ,
            name: UIKeyboardWillHideNotification, object: nil)
-        
     }
     
     func unsubscribeFromKeyboardNotifications() {
@@ -89,13 +97,64 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y += getKeyboardHeight(notification)
+        // Reset to original position
+        view.frame.origin.y = 0
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-        return keyboardSize.CGRectValue().height
+        if bottomTitle.editing {
+            return keyboardSize.CGRectValue().height
+        }
+        else {
+            return 0
+        }
+    }
+    
+    // Text Field Delegate Methods
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        // Figure out what the new text will be, if we return true
+        var newText: NSString = textField.text!
+        newText = newText.stringByReplacingCharactersInRange(range, withString: string)
+        
+        // returning true gives the text field permission to change its text
+        return true;
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        resignFirstResponder()
+        return true
+    }
+    
+    func save() {
+        //Create the meme
+        let meme = Meme( topText: topTitle.text!, bottomText:  bottomTitle.text!, memeImage: memeImageView.image!)
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        // TODO: Hide toolbar and navbar
+        self.navigationController?.navigationBarHidden = true
+        navigationController?.setToolbarHidden(true, animated: true)
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame,
+                                     afterScreenUpdates: true)
+        let memedImage : UIImage =
+            UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // TODO:  Show toolbar and navbar       
+        self.navigationController?.navigationBarHidden = false
+        navigationController?.setToolbarHidden(false, animated: false)
+        
+        
+        return memedImage
     }
 }
 
