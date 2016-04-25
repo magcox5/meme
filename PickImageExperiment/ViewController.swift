@@ -18,9 +18,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     ]
 
     struct Meme {
-        var topText: String
-        var bottomText: String
-        var memeImage: UIImage
+        var topText: String?
+        var bottomText: String?
+        var originalImage: UIImage?
+        var memeImage: UIImage!
     }
     
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let pickerController = UIImagePickerController()
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         pickerController.delegate = self
+    
         self.presentViewController(pickerController, animated: true, completion:nil)
     }
     
@@ -71,6 +73,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memeImageView.image = image
         }
         dismissViewControllerAnimated(true, completion: nil)
+        self.navigationItem.leftBarButtonItem!.enabled = true
     }
 
     @IBAction func pickAnImageFromCamera (sender: AnyObject) {
@@ -78,6 +81,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         imagePicker.delegate = self
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+
+    @IBAction func shareMeme(sender: AnyObject) {
+        //TODO:  generate a memed image
+        let imageToShare = generateMemedImage()
+        //TODO:  define an instance of the ActivityViewController
+        //TODO:  pass the ActivityViewController a memedImage as an activity item
+        let myController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: [])
+        //TODO:  pass the ActivityViewController a memedImage as an activity item
+        presentViewController(myController, animated: true, completion: nil)
+        //TODO:  present the ActivityViewController
+        
     }
     
     func subscribeToKeyboardNotifications() {        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:))    ,
@@ -132,7 +147,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         //Create the meme
-        let meme = Meme( topText: topTitle.text!, bottomText:  bottomTitle.text!, memeImage: memeImageView.image!)
+        let meme = Meme( topText: topTitle.text!, bottomText:  bottomTitle.text!, originalImage: self.memeImageView.image, memeImage: generateMemedImage())
     }
     
     func generateMemedImage() -> UIImage {

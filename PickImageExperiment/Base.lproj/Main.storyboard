@@ -18,58 +18,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvU-fn-Gef">
-                                <rect key="frame" x="20" y="548" width="456" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2O-FH-ups">
+                                <rect key="frame" x="0.0" y="72" width="400" height="390"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PdD-ri-zBv">
+                                        <rect key="frame" x="0.0" y="-3" width="399" height="396"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="USW-dW-6WS" userLabel="topTitle">
+                                                <rect key="frame" x="0.0" y="0.0" width="399" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-1N-hmq" userLabel="memeImageView">
+                                                <rect key="frame" x="0.0" y="30" width="399" height="336"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-7O-ZVb" userLabel="bottomTitle">
+                                                <rect key="frame" x="0.0" y="366" width="399" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="allowTextEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKQ-mh-KxZ"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="JBD-1N-hmq" secondAttribute="trailing" id="AVz-2B-gqK"/>
+                                            <constraint firstAttribute="bottom" secondItem="vHZ-7O-ZVb" secondAttribute="bottom" id="Hbp-p1-sVj"/>
+                                            <constraint firstItem="USW-dW-6WS" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="MEU-x3-CrG"/>
+                                            <constraint firstAttribute="trailing" secondItem="vHZ-7O-ZVb" secondAttribute="trailing" id="Mu6-AQ-nev"/>
+                                            <constraint firstItem="JBD-1N-hmq" firstAttribute="top" secondItem="USW-dW-6WS" secondAttribute="bottom" id="SMt-XX-QpK"/>
+                                            <constraint firstItem="USW-dW-6WS" firstAttribute="top" secondItem="PdD-ri-zBv" secondAttribute="top" id="Sgl-sq-Xvt"/>
+                                            <constraint firstItem="vHZ-7O-ZVb" firstAttribute="top" secondItem="JBD-1N-hmq" secondAttribute="bottom" id="T8T-bm-d6S"/>
+                                            <constraint firstItem="vHZ-7O-ZVb" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="UbS-4g-WFk"/>
+                                            <constraint firstItem="USW-dW-6WS" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="d7X-PW-1fR"/>
+                                            <constraint firstItem="vHZ-7O-ZVb" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="fC4-ba-ocE"/>
+                                            <constraint firstAttribute="trailing" secondItem="USW-dW-6WS" secondAttribute="trailing" id="hzq-Mb-CPI"/>
+                                            <constraint firstItem="JBD-1N-hmq" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="qkK-lh-VwQ"/>
+                                            <constraint firstItem="JBD-1N-hmq" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="rYB-ae-FXA"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="PdD-ri-zBv" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="top" constant="-3" id="QzK-T5-W9h"/>
+                                    <constraint firstAttribute="trailing" secondItem="PdD-ri-zBv" secondAttribute="trailing" constant="1" id="dXZ-Fe-bww"/>
+                                    <constraint firstItem="PdD-ri-zBv" firstAttribute="leading" secondItem="b2O-FH-ups" secondAttribute="leading" id="l3s-JB-nPR"/>
+                                    <constraint firstAttribute="bottom" secondItem="PdD-ri-zBv" secondAttribute="bottom" constant="-3" id="xZj-27-akj"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YvU-fn-Gef">
+                                <rect key="frame" x="0.0" y="541" width="400" height="44"/>
                                 <items>
-                                    <barButtonItem title="Choose" id="7sd-XT-vFr">
+                                    <barButtonItem title="Album" id="7sd-XT-vFr">
                                         <connections>
                                             <action selector="pickAnImage" destination="BYZ-38-t0r" id="5uY-wc-vIM"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Camera" id="fcV-aX-sig" userLabel="Camera">
+                                    <barButtonItem image="camera" id="fcV-aX-sig" userLabel="Camera">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Qfc-tf-I9n"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2O-FH-ups">
-                                <rect key="frame" x="0.0" y="64" width="400" height="379"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SF from Robin Williams Tunnel Easter 2016" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-1N-hmq" userLabel="memeImageView">
-                                        <rect key="frame" x="8" y="1" width="320" height="240"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-7O-ZVb" userLabel="bottomTitle">
-                                        <rect key="frame" x="8" y="211" width="320" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                        <connections>
-                                            <action selector="allowTextEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKQ-mh-KxZ"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="USW-dW-6WS" userLabel="topTitle">
-                                        <rect key="frame" x="8" y="1" width="320" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="b2O-FH-ups" secondAttribute="trailing" constant="180" id="16y-NN-fHN"/>
-                            <constraint firstItem="b2O-FH-ups" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="50t-MW-WXa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YvU-fn-Gef" secondAttribute="bottom" constant="8" id="61V-bg-sw0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YvU-fn-Gef" secondAttribute="bottom" constant="15" id="61V-bg-sw0"/>
                             <constraint firstItem="b2O-FH-ups" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="BnJ-mz-axo"/>
-                            <constraint firstItem="YvU-fn-Gef" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="bottom" constant="105" id="E9R-Ad-sV4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YvU-fn-Gef" secondAttribute="trailing" constant="104" id="G46-GB-4KM"/>
-                            <constraint firstItem="YvU-fn-Gef" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Uug-W6-LXE"/>
-                            <constraint firstItem="YvU-fn-Gef" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="bottom" constant="105" id="Uw4-Ss-agq"/>
-                            <constraint firstItem="b2O-FH-ups" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Xra-dP-dCh"/>
+                            <constraint firstItem="YvU-fn-Gef" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="bottom" constant="79" id="E9R-Ad-sV4"/>
+                            <constraint firstItem="YvU-fn-Gef" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Uug-W6-LXE"/>
+                            <constraint firstItem="b2O-FH-ups" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Xra-dP-dCh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BrA-JG-5Pi"/>
+                    <navigationItem key="navigationItem" id="BrA-JG-5Pi">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="share" id="X6Z-7f-btj" userLabel="Share Button">
+                            <connections>
+                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="CFw-7a-4WP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomTitle" destination="vHZ-7O-ZVb" id="f73-Jr-tVW"/>
                         <outlet property="cameraButton" destination="fcV-aX-sig" id="wbt-Yl-4YE"/>
@@ -102,6 +131,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SF from Robin Williams Tunnel Easter 2016" width="3264" height="2448"/>
+        <image name="camera" width="22" height="22"/>
+        <image name="share" width="22" height="22"/>
     </resources>
 </document>
