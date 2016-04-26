@@ -89,9 +89,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //TODO:  define an instance of the ActivityViewController
         //TODO:  pass the ActivityViewController a memedImage as an activity item
         let myController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: [])
-        //TODO:  pass the ActivityViewController a memedImage as an activity item
-        presentViewController(myController, animated: true, completion: nil)
         //TODO:  present the ActivityViewController
+        presentViewController(myController, animated: true, completion: nil)
+        myController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
+            
+            // Return if cancelled
+            if (!completed) {
+                return
+            }
+            self.save()
+            self.dismissViewControllerAnimated(true, completion:nil)
+        }
         
     }
     
@@ -147,7 +155,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         //Create the meme
-        let meme = Meme( topText: topTitle.text!, bottomText:  bottomTitle.text!, originalImage: self.memeImageView.image, memeImage: generateMemedImage())
+        _ = Meme( topText: topTitle.text!, bottomText:  bottomTitle.text!, originalImage: self.memeImageView.image, memeImage: generateMemedImage())
     }
     
     func generateMemedImage() -> UIImage {
@@ -155,6 +163,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // TODO: Hide toolbar and navbar
         self.navigationController?.navigationBarHidden = true
         navigationController?.setToolbarHidden(true, animated: true)
+        self.chooseButton.enabled = false
+        self.cameraButton.enabled = false
+        self.chooseButton.tintColor = UIColor.clearColor()
+        self.cameraButton.tintColor = UIColor.clearColor()
+        
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -167,6 +180,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // TODO:  Show toolbar and navbar       
         self.navigationController?.navigationBarHidden = false
         navigationController?.setToolbarHidden(false, animated: false)
+        self.chooseButton.enabled = true
+        self.cameraButton.enabled = true
+        self.chooseButton.tintColor = nil
+        self.cameraButton.tintColor = nil
         
         
         return memedImage
