@@ -105,6 +105,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    @IBAction func cancelMeme(sender: UIBarButtonItem) {
+        // Remove image and retore top and bottom titles to original state
+        memeImageView.image = nil
+        topTitle.text = "TOP"
+        bottomTitle.text = "BOTTOM"
+    }
+    
     func subscribeToKeyboardNotifications() {        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:))    ,
         name: UIKeyboardWillShowNotification, object: nil)
 
