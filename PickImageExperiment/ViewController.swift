@@ -31,7 +31,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTitle.defaultTextAttributes = memeTextAttributes
         bottomTitle.defaultTextAttributes = memeTextAttributes
         topTitle.textAlignment = .Center
+        topTitle.backgroundColor = UIColor.clearColor()
         bottomTitle.textAlignment = .Center
+        bottomTitle.backgroundColor = UIColor.clearColor()
         self.topTitle.delegate = self
         self.bottomTitle.delegate = self
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addTapped"))
