@@ -18,13 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvU-fn-Gef">
+                                <rect key="frame" x="0.0" y="556" width="598" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="598" id="2SQ-Cl-cet"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Album" id="7sd-XT-vFr">
+                                        <connections>
+                                            <action selector="pickAnImage" destination="BYZ-38-t0r" id="5uY-wc-vIM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="camera" id="fcV-aX-sig" userLabel="Camera">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Qfc-tf-I9n"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2O-FH-ups" userLabel="TopView">
-                                <rect key="frame" x="20" y="72" width="400" height="462"/>
+                                <rect key="frame" x="0.0" y="64" width="400" height="462"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-RX-BVD" userLabel="MemeView">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="462"/>
+                                        <rect key="frame" x="-8" y="0.0" width="400" height="462"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-1N-hmq" userLabel="memeImageView">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-1N-hmq" userLabel="memeImageView">
                                                 <rect key="frame" x="0.0" y="15" width="400" height="432"/>
                                             </imageView>
                                             <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2J-VY-3zs" userLabel="TitleView">
@@ -32,11 +50,13 @@
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="USW-dW-6WS" userLabel="topTitle">
                                                         <rect key="frame" x="0.0" y="29" width="392" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-7O-ZVb" userLabel="bottomTitle">
                                                         <rect key="frame" x="0.0" y="407" width="392" height="30"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                         <connections>
@@ -61,39 +81,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="MGl-RX-BVD" firstAttribute="leading" secondItem="b2O-FH-ups" secondAttribute="leadingMargin" constant="-8" id="8Lu-sX-adA"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="MGl-RX-BVD" secondAttribute="bottom" constant="-8" id="alb-g1-W9I" userLabel="bottomMargin = View.bottom - 8"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="MGl-RX-BVD" secondAttribute="trailing" constant="-8" id="bUE-vR-q4e"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="MGl-RX-BVD" secondAttribute="trailing" id="bUE-vR-q4e"/>
                                     <constraint firstItem="MGl-RX-BVD" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="topMargin" constant="-8" id="uzO-qe-7CU"/>
                                 </constraints>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvU-fn-Gef">
-                                <rect key="frame" x="0.0" y="556" width="598" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="598" id="2SQ-Cl-cet"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Album" id="7sd-XT-vFr">
-                                        <connections>
-                                            <action selector="pickAnImage" destination="BYZ-38-t0r" id="5uY-wc-vIM"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="camera" id="fcV-aX-sig" userLabel="Camera">
-                                        <connections>
-                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Qfc-tf-I9n"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b2O-FH-ups" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="564-mP-IHA"/>
-                            <constraint firstItem="b2O-FH-ups" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BnJ-mz-axo"/>
+                            <constraint firstItem="b2O-FH-ups" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="564-mP-IHA"/>
+                            <constraint firstItem="b2O-FH-ups" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="BnJ-mz-axo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YvU-fn-Gef" secondAttribute="bottom" id="Khw-iN-z4Z"/>
                             <constraint firstItem="YvU-fn-Gef" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Uug-W6-LXE"/>
-                            <constraint firstItem="YvU-fn-Gef" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="bottom" constant="22" id="dMb-8p-4NZ" userLabel="Toolbar.top = TopView.bottom + 15"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="b2O-FH-ups" secondAttribute="leading" id="uCu-HQ-T9d"/>
+                            <constraint firstItem="YvU-fn-Gef" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="bottom" constant="30" id="dMb-8p-4NZ" userLabel="Toolbar.top = TopView.bottom + 15"/>
+                            <constraint firstItem="MGl-RX-BVD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="esf-5J-UDC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="b2O-FH-ups" secondAttribute="leading" constant="20" id="uCu-HQ-T9d"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h2J-VY-3zs" secondAttribute="bottom" constant="66" id="xVH-8B-jTG"/>
                         </constraints>
                     </view>

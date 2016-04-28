@@ -13,9 +13,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let memeTextAttributes: [String: AnyObject] = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSBackgroundColorAttributeName : UIColor.whiteColor(),
+        NSBackgroundColorAttributeName : UIColor.clearColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
-        NSStrokeWidthAttributeName : 2.0
+        NSStrokeWidthAttributeName : 3.0
     ]
 
     struct Meme {
@@ -25,19 +25,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var memeImage: UIImage!
     }
     
+    func getTopText() {
+        topTitle.text = "TOP"
+    }
+    
+    func getBottomText() {
+        bottomTitle.text = "BOTTOM"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTitle.text = "TOP"
-        bottomTitle.text = "BOTTOM"
+        getTopText()
+        getBottomText()
         topTitle.defaultTextAttributes = memeTextAttributes
         bottomTitle.defaultTextAttributes = memeTextAttributes
         topTitle.textAlignment = .Center
-        topTitle.backgroundColor = UIColor.clearColor()
+        topTitle.textColor = UIColor.whiteColor()
         bottomTitle.textAlignment = .Center
-        bottomTitle.backgroundColor = UIColor.clearColor()
+        bottomTitle.textColor = UIColor.whiteColor()
         self.topTitle.delegate = self
         self.bottomTitle.delegate = self
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addTapped"))
      }
 
     override func viewWillAppear(animated: Bool) {
@@ -109,8 +115,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
         // Remove image and retore top and bottom titles to original state
         memeImageView.image = nil
-        topTitle.text = "TOP"
-        bottomTitle.text = "BOTTOM"
+        getTopText()
+        getBottomText()
     }
     
     func subscribeToKeyboardNotifications() {        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:))    ,
