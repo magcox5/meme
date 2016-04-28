@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DAF7411A1CB30F0500CE49B2"
-               BuildableName = "PickImageExperiment.app"
-               BlueprintName = "PickImageExperiment"
-               ReferencedContainer = "container:PickImageExperiment.xcodeproj">
+               BuildableName = "MemeMento.app"
+               BlueprintName = "MemeMento"
+               ReferencedContainer = "container:MemeMento.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DAF7411A1CB30F0500CE49B2"
-            BuildableName = "PickImageExperiment.app"
-            BlueprintName = "PickImageExperiment"
-            ReferencedContainer = "container:PickImageExperiment.xcodeproj">
+            BuildableName = "MemeMento.app"
+            BlueprintName = "MemeMento"
+            ReferencedContainer = "container:MemeMento.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DAF7411A1CB30F0500CE49B2"
-            BuildableName = "PickImageExperiment.app"
-            BlueprintName = "PickImageExperiment"
-            ReferencedContainer = "container:PickImageExperiment.xcodeproj">
+            BuildableName = "MemeMento.app"
+            BlueprintName = "MemeMento"
+            ReferencedContainer = "container:MemeMento.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DAF7411A1CB30F0500CE49B2"
-            BuildableName = "PickImageExperiment.app"
-            BlueprintName = "PickImageExperiment"
-            ReferencedContainer = "container:PickImageExperiment.xcodeproj">
+            BuildableName = "MemeMento.app"
+            BlueprintName = "MemeMento"
+            ReferencedContainer = "container:MemeMento.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

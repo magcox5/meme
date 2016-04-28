@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PickImageExperiment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMento" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,58 +37,71 @@
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2O-FH-ups">
-                                <rect key="frame" x="20" y="72" width="400" height="390"/>
+                                <rect key="frame" x="20" y="72" width="400" height="462"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PdD-ri-zBv">
-                                        <rect key="frame" x="0.0" y="-3" width="559" height="396"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-RX-BVD">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="462"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="USW-dW-6WS" userLabel="topTitle">
-                                                <rect key="frame" x="0.0" y="0.0" width="559" height="0.0"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                            </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-1N-hmq" userLabel="memeImageView">
-                                                <rect key="frame" x="0.0" y="0.0" width="559" height="396"/>
+                                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2J-VY-3zs">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="462"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="USW-dW-6WS" userLabel="topTitle">
+                                                        <rect key="frame" x="0.0" y="29" width="400" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-7O-ZVb" userLabel="bottomTitle">
+                                                        <rect key="frame" x="0.0" y="397" width="400" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                        <connections>
+                                                            <action selector="allowTextEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKQ-mh-KxZ"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="USW-dW-6WS" secondAttribute="trailing" constant="-159" id="DEr-Zj-Pqr"/>
+                                                    <constraint firstItem="vHZ-7O-ZVb" firstAttribute="top" secondItem="USW-dW-6WS" secondAttribute="bottom" constant="338" id="Mqj-nC-QP1"/>
+                                                    <constraint firstItem="vHZ-7O-ZVb" firstAttribute="leading" secondItem="h2J-VY-3zs" secondAttribute="leading" id="NbR-ef-HJN"/>
+                                                    <constraint firstItem="vHZ-7O-ZVb" firstAttribute="leading" secondItem="USW-dW-6WS" secondAttribute="leading" id="QYc-mz-10g"/>
+                                                    <constraint firstItem="vHZ-7O-ZVb" firstAttribute="top" secondItem="USW-dW-6WS" secondAttribute="bottom" constant="338" id="ga9-Zd-SSZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vHZ-7O-ZVb" secondAttribute="trailing" constant="-159" id="wUF-pi-tnx"/>
+                                                    <constraint firstItem="USW-dW-6WS" firstAttribute="top" secondItem="h2J-VY-3zs" secondAttribute="top" constant="29" id="x6V-mH-7B9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vHZ-7O-ZVb" secondAttribute="bottom" constant="35" id="xGI-ff-CBG"/>
+                                                    <constraint firstItem="USW-dW-6WS" firstAttribute="leading" secondItem="h2J-VY-3zs" secondAttribute="leading" id="yg1-cR-ftK"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-1N-hmq" userLabel="memeImageView">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="462"/>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vHZ-7O-ZVb" userLabel="bottomTitle">
-                                                <rect key="frame" x="0.0" y="396" width="559" height="0.0"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                <connections>
-                                                    <action selector="allowTextEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKQ-mh-KxZ"/>
-                                                </connections>
-                                            </textField>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="JBD-1N-hmq" secondAttribute="trailing" id="AVz-2B-gqK"/>
-                                            <constraint firstAttribute="bottom" secondItem="vHZ-7O-ZVb" secondAttribute="bottom" id="Hbp-p1-sVj"/>
-                                            <constraint firstItem="USW-dW-6WS" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="MEU-x3-CrG"/>
-                                            <constraint firstAttribute="trailing" secondItem="vHZ-7O-ZVb" secondAttribute="trailing" id="Mu6-AQ-nev"/>
-                                            <constraint firstItem="JBD-1N-hmq" firstAttribute="top" secondItem="USW-dW-6WS" secondAttribute="bottom" id="SMt-XX-QpK" userLabel="memeImageView.top = topTitle.top"/>
-                                            <constraint firstItem="USW-dW-6WS" firstAttribute="top" secondItem="PdD-ri-zBv" secondAttribute="top" id="Sgl-sq-Xvt"/>
-                                            <constraint firstItem="vHZ-7O-ZVb" firstAttribute="top" secondItem="JBD-1N-hmq" secondAttribute="bottom" id="T8T-bm-d6S" userLabel="bottomTitle.top = memeImageView.bottom-20"/>
-                                            <constraint firstItem="vHZ-7O-ZVb" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="UbS-4g-WFk"/>
-                                            <constraint firstAttribute="trailing" secondItem="USW-dW-6WS" secondAttribute="trailing" id="hzq-Mb-CPI"/>
-                                            <constraint firstItem="JBD-1N-hmq" firstAttribute="leading" secondItem="PdD-ri-zBv" secondAttribute="leading" id="qkK-lh-VwQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="JBD-1N-hmq" secondAttribute="trailing" id="QRl-eJ-q3v"/>
+                                            <constraint firstItem="JBD-1N-hmq" firstAttribute="leading" secondItem="MGl-RX-BVD" secondAttribute="leading" id="UFX-wN-mTx"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="PdD-ri-zBv" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="top" constant="-3" id="QzK-T5-W9h"/>
-                                    <constraint firstAttribute="trailing" secondItem="PdD-ri-zBv" secondAttribute="trailing" constant="-159" id="dXZ-Fe-bww"/>
-                                    <constraint firstItem="PdD-ri-zBv" firstAttribute="leading" secondItem="b2O-FH-ups" secondAttribute="leading" id="l3s-JB-nPR"/>
-                                    <constraint firstAttribute="bottom" secondItem="PdD-ri-zBv" secondAttribute="bottom" constant="-3" id="xZj-27-akj"/>
+                                    <constraint firstAttribute="bottom" secondItem="MGl-RX-BVD" secondAttribute="bottom" id="92B-VX-IrV"/>
+                                    <constraint firstItem="MGl-RX-BVD" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="top" id="9MD-xX-EJb"/>
+                                    <constraint firstAttribute="trailing" secondItem="MGl-RX-BVD" secondAttribute="trailing" id="CRs-0j-nNp"/>
+                                    <constraint firstItem="MGl-RX-BVD" firstAttribute="leading" secondItem="b2O-FH-ups" secondAttribute="leading" id="DVS-hm-dsJ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YvU-fn-Gef" secondAttribute="bottom" constant="15" id="61V-bg-sw0"/>
+                            <constraint firstItem="b2O-FH-ups" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="564-mP-IHA"/>
                             <constraint firstItem="b2O-FH-ups" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BnJ-mz-axo"/>
-                            <constraint firstItem="YvU-fn-Gef" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="bottom" constant="79" id="E9R-Ad-sV4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YvU-fn-Gef" secondAttribute="bottom" constant="15" id="Khw-iN-z4Z"/>
                             <constraint firstItem="YvU-fn-Gef" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Uug-W6-LXE"/>
                             <constraint firstItem="b2O-FH-ups" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Xra-dP-dCh"/>
+                            <constraint firstItem="YvU-fn-Gef" firstAttribute="top" secondItem="b2O-FH-ups" secondAttribute="bottom" constant="7" id="dMb-8p-4NZ"/>
+                            <constraint firstItem="JBD-1N-hmq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hOm-Kb-bVA"/>
+                            <constraint firstItem="YvU-fn-Gef" firstAttribute="top" secondItem="JBD-1N-hmq" secondAttribute="bottom" constant="15" id="kfb-ij-fgJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b2O-FH-ups" secondAttribute="trailing" constant="160" id="rH6-2H-11t"/>
                         </constraints>
                     </view>

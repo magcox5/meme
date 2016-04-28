@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DAF7411B1CB30F0500CE49B2 /* PickImageExperiment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickImageExperiment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF7411B1CB30F0500CE49B2 /* MemeMento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF7411E1CB30F0500CE49B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF741201CB30F0500CE49B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DAF741231CB30F0500CE49B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		DAF741121CB30F0400CE49B2 = {
 			isa = PBXGroup;
 			children = (
-				DAF7411D1CB30F0500CE49B2 /* PickImageExperiment */,
+				DAF7411D1CB30F0500CE49B2 /* MemeMento */,
 				DAF7411C1CB30F0500CE49B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		DAF7411C1CB30F0500CE49B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DAF7411B1CB30F0500CE49B2 /* PickImageExperiment.app */,
+				DAF7411B1CB30F0500CE49B2 /* MemeMento.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DAF7411D1CB30F0500CE49B2 /* PickImageExperiment */ = {
+		DAF7411D1CB30F0500CE49B2 /* MemeMento */ = {
 			isa = PBXGroup;
 			children = (
 				DAF7411E1CB30F0500CE49B2 /* AppDelegate.swift */,
@@ -61,15 +61,16 @@
 				DAF741271CB30F0500CE49B2 /* LaunchScreen.storyboard */,
 				DAF7412A1CB30F0500CE49B2 /* Info.plist */,
 			);
+			name = MemeMento;
 			path = PickImageExperiment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DAF7411A1CB30F0500CE49B2 /* PickImageExperiment */ = {
+		DAF7411A1CB30F0500CE49B2 /* MemeMento */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAF7412D1CB30F0500CE49B2 /* Build configuration list for PBXNativeTarget "PickImageExperiment" */;
+			buildConfigurationList = DAF7412D1CB30F0500CE49B2 /* Build configuration list for PBXNativeTarget "MemeMento" */;
 			buildPhases = (
 				DAF741171CB30F0500CE49B2 /* Sources */,
 				DAF741181CB30F0500CE49B2 /* Frameworks */,
@@ -79,9 +80,9 @@
 			);
 			dependencies = (
 			);
-			name = PickImageExperiment;
+			name = MemeMento;
 			productName = PickImageExperiment;
-			productReference = DAF7411B1CB30F0500CE49B2 /* PickImageExperiment.app */;
+			productReference = DAF7411B1CB30F0500CE49B2 /* MemeMento.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +101,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DAF741161CB30F0400CE49B2 /* Build configuration list for PBXProject "PickImageExperiment" */;
+			buildConfigurationList = DAF741161CB30F0400CE49B2 /* Build configuration list for PBXProject "MemeMento" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -113,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DAF7411A1CB30F0500CE49B2 /* PickImageExperiment */,
+				DAF7411A1CB30F0500CE49B2 /* MemeMento */,
 			);
 		};
 /* End PBXProject section */
@@ -253,7 +254,7 @@
 				INFOPLIST_FILE = PickImageExperiment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MagCoxSW.PickImageExperiment;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MemeMento;
 			};
 			name = Debug;
 		};
@@ -264,14 +265,14 @@
 				INFOPLIST_FILE = PickImageExperiment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MagCoxSW.PickImageExperiment;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MemeMento;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAF741161CB30F0400CE49B2 /* Build configuration list for PBXProject "PickImageExperiment" */ = {
+		DAF741161CB30F0400CE49B2 /* Build configuration list for PBXProject "MemeMento" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAF7412B1CB30F0500CE49B2 /* Debug */,
@@ -280,13 +281,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DAF7412D1CB30F0500CE49B2 /* Build configuration list for PBXNativeTarget "PickImageExperiment" */ = {
+		DAF7412D1CB30F0500CE49B2 /* Build configuration list for PBXNativeTarget "MemeMento" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAF7412E1CB30F0500CE49B2 /* Debug */,
 				DAF7412F1CB30F0500CE49B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
