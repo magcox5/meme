@@ -47,6 +47,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
      }
 
     override func viewWillAppear(animated: Bool) {
+        // Disable the camera button if no camera exists
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
     }
@@ -54,6 +55,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillDisappear(animated: Bool) {
         unsubscribeFromKeyboardNotifications()
     }
+    
+    // Outlets
 
     @IBOutlet weak var topTitle: UITextField!
     
@@ -64,6 +67,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var chooseButton: UIBarButtonItem!
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+
+    // Actions
     
     @IBAction func pickAnImage() {
         let pickerController = UIImagePickerController()
@@ -93,32 +98,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func shareMeme(sender: AnyObject) {
-        //TODO:  generate a memed image
+        //Create a variable to generate a memed image
         let imageToShare = generateMemedImage()
-        //TODO:  define an instance of the ActivityViewController
-        //TODO:  pass the ActivityViewController a memedImage as an activity item
+        //Define an instance of the ActivityViewController
+        //& pass the ActivityViewController a memedImage as an activity item
         let myController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: [])
-        //TODO:  present the ActivityViewController
+        //Present the ActivityViewController
         presentViewController(myController, animated: true, completion: nil)
+        
+        //If the action completed successfully, save the meme
         myController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
             
             // Return if cancelled
-            if (!completed) {
-                return
+            if (completed) {
+                self.save()
             }
-            self.save()
             self.dismissViewControllerAnimated(true, completion:nil)
         }
         
     }
     
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
-        // Remove image and retore top and bottom titles to original state
+        // Remove image and restore top and bottom titles to original state
         memeImageView.image = nil
         getTopText()
         getBottomText()
     }
     
+
+    // Subscribe to keyboard notifications so keyboard can be 
+    // moved up when editing bottom title
     func subscribeToKeyboardNotifications() {        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:))    ,
         name: UIKeyboardWillShowNotification, object: nil)
 
@@ -129,6 +138,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name:
             UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:
+            UIKeyboardWillHideNotification, object: nil)
+
     }
 
     func keyboardWillShow(notification: NSNotification) {
@@ -170,13 +182,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func save() {
-        //Create the meme
+        // Create the meme
         _ = Meme( topText: topTitle.text!, bottomText:  bottomTitle.text!, originalImage: self.memeImageView.image, memeImage: generateMemedImage())
     }
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
+        // Hide toolbar and navbar
         self.navigationController?.navigationBarHidden = true
         navigationController?.setToolbarHidden(true, animated: true)
         self.chooseButton.enabled = false
@@ -193,7 +205,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        // TODO:  Show toolbar and navbar       
+        //  Show toolbar and navbar
         self.navigationController?.navigationBarHidden = false
         navigationController?.setToolbarHidden(false, animated: false)
         self.chooseButton.enabled = true
