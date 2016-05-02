@@ -102,12 +102,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imageToShare = generateMemedImage()
         //Define an instance of the ActivityViewController
         //& pass the ActivityViewController a memedImage as an activity item
-        let myController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: [])
+        let memeAVController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: [])
         //Present the ActivityViewController
-        presentViewController(myController, animated: true, completion: nil)
+        presentViewController(memeAVController, animated: true, completion: nil)
         
         //If the action completed successfully, save the meme
-        myController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
+        memeAVController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
             
             // Return if cancelled
             if (completed) {
