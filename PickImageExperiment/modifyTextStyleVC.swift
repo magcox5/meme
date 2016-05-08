@@ -23,7 +23,7 @@ class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSBackgroundColorAttributeName : UIColor.clearColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
         NSStrokeWidthAttributeName : -3.0
     ]
 
@@ -37,7 +37,7 @@ class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBAction func okChangeText(sender: UIButton) {
-//        ViewController.topText.
+//            ViewController.topText.font = self.textToModify.font
         dismissViewControllerAnimated(true, completion: nil)
     }
     
