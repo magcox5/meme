@@ -6,6 +6,74 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--modifyTextStyle-->
+        <scene sceneID="gNI-mX-zde">
+            <objects>
+                <viewController id="UUS-Sp-GCm" userLabel="modifyTextStyle" customClass="modifyTextStyleVC" customModule="MemeMento" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sFJ-6C-dgO"/>
+                        <viewControllerLayoutGuide type="bottom" id="9AX-mK-GD5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pdh-qe-LQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Modify Text Font &amp; Color" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoi-WH-pFQ" userLabel="textToModify">
+                                <rect key="frame" x="123" y="20" width="354" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-13-0yy" userLabel="pickerView">
+                                <rect key="frame" x="140" y="76" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UUS-Sp-GCm" id="T4i-nC-DBe"/>
+                                    <outlet property="delegate" destination="UUS-Sp-GCm" id="fjF-4b-Kfr"/>
+                                </connections>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3j-NM-jhJ">
+                                <rect key="frame" x="228" y="532" width="145" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0b-RE-9tW">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="48"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="OK"/>
+                                        <connections>
+                                            <action selector="okChangeText:" destination="UUS-Sp-GCm" eventType="touchUpInside" id="Jdk-1v-ct9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8j-mN-lPf">
+                                        <rect key="frame" x="45" y="0.0" width="100" height="48"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelChanges:" destination="UUS-Sp-GCm" eventType="touchUpInside" id="cqG-Xi-vBB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="G8j-mN-lPf" firstAttribute="leading" secondItem="v0b-RE-9tW" secondAttribute="trailing" constant="20" id="zrS-H6-j5C"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dRb-13-0yy" firstAttribute="top" secondItem="eoi-WH-pFQ" secondAttribute="bottom" constant="26" id="0ro-6r-q5P"/>
+                            <constraint firstItem="eoi-WH-pFQ" firstAttribute="centerX" secondItem="pdh-qe-LQJ" secondAttribute="centerX" id="IZ8-7H-CmH"/>
+                            <constraint firstAttribute="bottom" secondItem="K3j-NM-jhJ" secondAttribute="bottom" constant="20" symbolic="YES" id="T2W-l7-ITk"/>
+                            <constraint firstItem="dRb-13-0yy" firstAttribute="centerX" secondItem="pdh-qe-LQJ" secondAttribute="centerX" id="cyQ-uw-xJM"/>
+                            <constraint firstItem="eoi-WH-pFQ" firstAttribute="top" secondItem="sFJ-6C-dgO" secondAttribute="bottom" id="jNK-iH-wlZ"/>
+                            <constraint firstItem="K3j-NM-jhJ" firstAttribute="centerX" secondItem="dRb-13-0yy" secondAttribute="centerX" id="qvm-xF-tQO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="dRb-13-0yy" id="rYT-iR-UDD"/>
+                        <outlet property="textToModify" destination="eoi-WH-pFQ" id="VCj-UB-yji"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTa-PL-oLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="-871"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -33,6 +101,12 @@
                                     <barButtonItem image="camera" id="neW-nB-PMs">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Ocz-u1-YQu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="wmg-qh-9k6"/>
+                                    <barButtonItem image="formatText" width="30" id="Hdi-lc-cq1" userLabel="Text Style Button">
+                                        <connections>
+                                            <segue destination="UUS-Sp-GCm" kind="presentation" id="cHa-Qh-Wwh"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -87,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="411" y="-376"/>
+            <point key="canvasLocation" x="-279" y="-184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hQB-wn-xcM">
@@ -105,11 +179,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ib9-CZ-Hph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="-376"/>
+            <point key="canvasLocation" x="-285" y="-892"/>
         </scene>
     </scenes>
     <resources>
         <image name="camera" width="22" height="22"/>
+        <image name="formatText" width="22" height="22"/>
         <image name="share" width="22" height="22"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DAF588A11CDEB62D0091B703 /* modifyTextStyleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF588A01CDEB62D0091B703 /* modifyTextStyleVC.swift */; };
 		DAF7411F1CB30F0500CE49B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF7411E1CB30F0500CE49B2 /* AppDelegate.swift */; };
 		DAF741211CB30F0500CE49B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF741201CB30F0500CE49B2 /* ViewController.swift */; };
 		DAF741241CB30F0500CE49B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF741221CB30F0500CE49B2 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DAF588A01CDEB62D0091B703 /* modifyTextStyleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = modifyTextStyleVC.swift; sourceTree = "<group>"; };
 		DAF7411B1CB30F0500CE49B2 /* MemeMento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF7411E1CB30F0500CE49B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF741201CB30F0500CE49B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				DAF7411E1CB30F0500CE49B2 /* AppDelegate.swift */,
 				DAF741201CB30F0500CE49B2 /* ViewController.swift */,
+				DAF588A01CDEB62D0091B703 /* modifyTextStyleVC.swift */,
 				DAF741221CB30F0500CE49B2 /* Main.storyboard */,
 				DAF741251CB30F0500CE49B2 /* Assets.xcassets */,
 				DAF741271CB30F0500CE49B2 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF588A11CDEB62D0091B703 /* modifyTextStyleVC.swift in Sources */,
 				DAF741211CB30F0500CE49B2 /* ViewController.swift in Sources */,
 				DAF7411F1CB30F0500CE49B2 /* AppDelegate.swift in Sources */,
 			);
