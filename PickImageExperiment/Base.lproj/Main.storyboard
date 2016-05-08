@@ -19,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Modify Text Font &amp; Color" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoi-WH-pFQ" userLabel="textToModify">
-                                <rect key="frame" x="179" y="20" width="243" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <rect key="frame" x="123" y="20" width="354" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-13-0yy" userLabel="pickerView">
@@ -100,7 +100,8 @@
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="wmg-qh-9k6"/>
                                     <barButtonItem image="formatText" width="30" id="Hdi-lc-cq1" userLabel="Text Style Button">
                                         <connections>
-                                            <segue destination="UUS-Sp-GCm" kind="presentation" id="cHa-Qh-Wwh"/>
+                                            <action selector="modifyTextStyle:" destination="BYZ-38-t0r" id="oE3-96-HBq"/>
+                                            <segue destination="UUS-Sp-GCm" kind="presentation" identifier="modifyTextStyle" id="bgR-io-Gsc"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -150,6 +151,7 @@
                         <outlet property="cameraButton" destination="neW-nB-PMs" id="UdJ-ZT-JhL"/>
                         <outlet property="chooseButton" destination="WTG-1W-uJN" id="BeG-wh-0KF"/>
                         <outlet property="memeImageView" destination="VbO-hM-PQs" id="JUw-2v-I6y"/>
+                        <outlet property="textStyleButton" destination="Hdi-lc-cq1" id="UHc-lK-1Uh"/>
                         <outlet property="topTitle" destination="R5E-Rz-7s5" id="ACZ-9i-YmN"/>
                     </connections>
                 </viewController>

@@ -23,21 +23,21 @@ class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSBackgroundColorAttributeName : UIColor.clearColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
         NSStrokeWidthAttributeName : -3.0
     ]
 
-//    var fontSelected: UIFont
-//    fontSelected = self.textToModify.font
-  
-//    var colorSelected: UIColor
+    weak var firstViewController : ViewController?
     
     @IBOutlet weak var textToModify: UITextField!
     
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBAction func okChangeText(sender: UIButton) {
-//            ViewController.topText.font = self.textToModify.font
+        firstViewController?.topTitle.font = self.textToModify.font
+        firstViewController?.topTitle.textColor = self.textToModify.textColor
+        firstViewController?.bottomTitle.font = self.textToModify.font
+        firstViewController?.bottomTitle.textColor = self.textToModify.textColor
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -45,7 +45,7 @@ class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    let fontSize: CGFloat = 20.0
+    let fontSize: CGFloat = 30.0
     
     var fontChoices = ["Helvetica Neue", "American  Typewriter", "Helvetica", "Iowan Old Style", "Times New Roman"]
     

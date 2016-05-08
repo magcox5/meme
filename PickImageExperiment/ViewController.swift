@@ -68,6 +68,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
 
+    @IBOutlet weak var textStyleButton: UIBarButtonItem!
+    
     // Actions
     
     @IBAction func pickAnImage() {
@@ -193,8 +195,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         navigationController?.setToolbarHidden(true, animated: true)
         self.chooseButton.enabled = false
         self.cameraButton.enabled = false
+        self.textStyleButton.enabled = false
         self.chooseButton.tintColor = UIColor.clearColor()
         self.cameraButton.tintColor = UIColor.clearColor()
+        self.textStyleButton.tintColor = UIColor.clearColor()
         
         
         // Render view to an image
@@ -210,11 +214,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         navigationController?.setToolbarHidden(false, animated: false)
         self.chooseButton.enabled = true
         self.cameraButton.enabled = true
+        self.textStyleButton.enabled = true
         self.chooseButton.tintColor = nil
         self.cameraButton.tintColor = nil
+        self.textStyleButton.tintColor = nil
         
         
         return memedImage
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "modifyTextStyle" {
+            let secondViewController = segue.destinationViewController as! modifyTextStyleVC
+            secondViewController.firstViewController = self
+        }
     }
 }
 
