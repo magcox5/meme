@@ -32,8 +32,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func getBottomText() {
         bottomTitle.text = "BOTTOM"
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func resetTextFields() {
+        // Set Text Fields to Original values
         getTopText()
         getBottomText()
         topTitle.defaultTextAttributes = memeTextAttributes
@@ -44,6 +45,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTitle.backgroundColor = UIColor.clearColor()
         bottomTitle.textAlignment = .Center
         bottomTitle.textColor = UIColor.whiteColor()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        resetTextFields()
         self.topTitle.delegate = self
         self.bottomTitle.delegate = self
      }
@@ -127,8 +133,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
         // Remove image and restore top and bottom titles to original state
         memeImageView.image = nil
-        getTopText()
-        getBottomText()
+        resetTextFields()
     }
     
 
@@ -187,6 +192,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return true
     }
     
+    // methods for generating and saving the meme
     func save() {
         // Create the meme
         _ = Meme( topText: topTitle.text!, bottomText:  bottomTitle.text!, originalImage: self.memeImageView.image, memeImage: generateMemedImage())
@@ -215,6 +221,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    // method to pass view controller to textModifyVC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "modifyTextStyle" {
             let secondViewController = segue.destinationViewController as! modifyTextStyleVC

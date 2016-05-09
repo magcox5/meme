@@ -18,6 +18,8 @@ import UIKit
 
 class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    //  Declare variables and outlets
+    let fontSize: CGFloat = 30.0
     
     let testTextAttributes: [String: AnyObject] = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -33,6 +35,14 @@ class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     @IBOutlet weak var pickerView: UIPickerView!
     
+    var fontChoices = ["Helvetica Neue", "American  Typewriter", "Helvetica", "Iowan Old Style", "Times New Roman"]
+    
+    var colorChoices = ["White", "Yellow", "Orange", "Red", "Green", "Blue", "Brown", "Black"]
+    
+    var colorChoices2 = [UIColor.whiteColor(), UIColor.yellowColor(), UIColor.orangeColor(), UIColor.redColor(), UIColor.greenColor(), UIColor.blueColor(), UIColor.brownColor(), UIColor.blackColor()]
+    
+    
+    //  Actions
     @IBAction func okChangeText(sender: UIButton) {
         firstViewController?.topTitle.font = self.textToModify.font
         firstViewController?.topTitle.textColor = self.textToModify.textColor
@@ -45,16 +55,7 @@ class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    let fontSize: CGFloat = 30.0
-    
-    var fontChoices = ["Helvetica Neue", "American  Typewriter", "Helvetica", "Iowan Old Style", "Times New Roman"]
-    
-    var colorChoices = ["White", "Yellow", "Orange", "Red", "Green", "Blue", "Brown", "Black"]
-    
-    var colorChoices2 = [UIColor.whiteColor(), UIColor.yellowColor(), UIColor.orangeColor(), UIColor.redColor(), UIColor.greenColor(), UIColor.blueColor(), UIColor.brownColor(), UIColor.blackColor()]
-    
-    
-    
+    // Methods for pickerView to display and choose font style and color
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2
     }
