@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Modify Text Font &amp; Color" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoi-WH-pFQ" userLabel="textToModify">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Modify Text Font &amp; Color" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoi-WH-pFQ" userLabel="textToModify">
                                 <rect key="frame" x="123" y="20" width="354" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-13-0yy" userLabel="pickerView">
                                 <rect key="frame" x="140" y="76" width="320" height="216"/>
@@ -152,6 +152,7 @@
                         <outlet property="chooseButton" destination="WTG-1W-uJN" id="BeG-wh-0KF"/>
                         <outlet property="memeImageView" destination="VbO-hM-PQs" id="JUw-2v-I6y"/>
                         <outlet property="textStyleButton" destination="Hdi-lc-cq1" id="UHc-lK-1Uh"/>
+                        <outlet property="toolBar" destination="ier-Nd-6Cx" id="tvR-co-TEK"/>
                         <outlet property="topTitle" destination="R5E-Rz-7s5" id="ACZ-9i-YmN"/>
                     </connections>
                 </viewController>

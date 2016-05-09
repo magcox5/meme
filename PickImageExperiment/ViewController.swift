@@ -40,6 +40,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTitle.defaultTextAttributes = memeTextAttributes
         topTitle.textAlignment = .Center
         topTitle.textColor = UIColor.whiteColor()
+        topTitle.backgroundColor = UIColor.clearColor()
+        bottomTitle.backgroundColor = UIColor.clearColor()
         bottomTitle.textAlignment = .Center
         bottomTitle.textColor = UIColor.whiteColor()
         self.topTitle.delegate = self
@@ -63,6 +65,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTitle: UITextField!
     
     @IBOutlet weak var memeImageView: UIImageView!
+    
+    @IBOutlet weak var toolBar: UIToolbar!
     
     @IBOutlet weak var chooseButton: UIBarButtonItem!
     
@@ -193,13 +197,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Hide toolbar and navbar
         self.navigationController?.navigationBarHidden = true
         navigationController?.setToolbarHidden(true, animated: true)
-        self.chooseButton.enabled = false
-        self.cameraButton.enabled = false
-        self.textStyleButton.enabled = false
-        self.chooseButton.tintColor = UIColor.clearColor()
-        self.cameraButton.tintColor = UIColor.clearColor()
-        self.textStyleButton.tintColor = UIColor.clearColor()
-        
+        self.toolBar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -212,13 +210,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //  Show toolbar and navbar
         self.navigationController?.navigationBarHidden = false
         navigationController?.setToolbarHidden(false, animated: false)
-        self.chooseButton.enabled = true
-        self.cameraButton.enabled = true
-        self.textStyleButton.enabled = true
-        self.chooseButton.tintColor = nil
-        self.cameraButton.tintColor = nil
-        self.textStyleButton.tintColor = nil
-        
+        self.toolBar.hidden = false
         
         return memedImage
     }
