@@ -108,13 +108,13 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="IQm-t2-Aj6"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-Rz-7s5" userLabel="topTitle">
-                                <rect key="frame" x="0.0" y="86" width="600" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-Rz-7s5" userLabel="topTitle">
+                                <rect key="frame" x="0.0" y="86" width="600" height="39"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nOJ-wu-Xpi" userLabel="bottomTitle">
-                                <rect key="frame" x="0.0" y="513" width="600" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOJ-wu-Xpi" userLabel="bottomTitle">
+                                <rect key="frame" x="0.0" y="507" width="600" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -137,7 +137,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BrA-JG-5Pi">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="share" id="X6Z-7f-btj" userLabel="Share Button">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" systemItem="action" id="X6Z-7f-btj" userLabel="Share Button">
                             <connections>
                                 <action selector="shareMeme:" destination="BYZ-38-t0r" id="CFw-7a-4WP"/>
                             </connections>
@@ -184,6 +184,5 @@
     <resources>
         <image name="camera" width="22" height="22"/>
         <image name="formatText" width="22" height="22"/>
-        <image name="share" width="22" height="22"/>
     </resources>
 </document>
