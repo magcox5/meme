@@ -50,8 +50,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         resetTextFields()
-        self.topTitle.delegate = self
-        self.bottomTitle.delegate = self
+        topTitle.delegate = self
+        bottomTitle.delegate = self
      }
 
     override func viewWillAppear(animated: Bool) {
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         pickerController.delegate = self
     
-        self.presentViewController(pickerController, animated: true, completion:nil)
+        presentViewController(pickerController, animated: true, completion:nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -99,7 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memeImageView.image = image
         }
         dismissViewControllerAnimated(true, completion: nil)
-        self.navigationItem.leftBarButtonItem!.enabled = true
+        navigationItem.leftBarButtonItem!.enabled = true
     }
 
     @IBAction func pickAnImageFromCamera (sender: AnyObject) {
@@ -187,7 +187,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        view.endEditing(true)
         resignFirstResponder()
         return true
     }
@@ -201,9 +201,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
-        self.navigationController?.navigationBarHidden = true
+        navigationController?.navigationBarHidden = true
         navigationController?.setToolbarHidden(true, animated: true)
-        self.toolBar.hidden = true
+        toolBar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -214,9 +214,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         //  Show toolbar and navbar
-        self.navigationController?.navigationBarHidden = false
+        navigationController?.navigationBarHidden = false
         navigationController?.setToolbarHidden(false, animated: false)
-        self.toolBar.hidden = false
+        toolBar.hidden = false
         
         return memedImage
     }

@@ -44,10 +44,10 @@ class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     //  Actions
     @IBAction func okChangeText(sender: UIButton) {
-        firstViewController?.topTitle.font = self.textToModify.font
-        firstViewController?.topTitle.textColor = self.textToModify.textColor
-        firstViewController?.bottomTitle.font = self.textToModify.font
-        firstViewController?.bottomTitle.textColor = self.textToModify.textColor
+        firstViewController?.topTitle.font = textToModify.font
+        firstViewController?.topTitle.textColor = textToModify.textColor
+        firstViewController?.bottomTitle.font = textToModify.font
+        firstViewController?.bottomTitle.textColor = textToModify.textColor
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -131,11 +131,11 @@ class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
     {
         if (component == 0) {
             // Set Font Type
-            self.textToModify.font = UIFont (name: fontChoices[row], size: fontSize)
+            textToModify.font = UIFont (name: fontChoices[row], size: fontSize)
         } else if (component == 1) {
             
             // Set Font Color
-            self.textToModify.textColor = colorChoices2[row]
+            textToModify.textColor = colorChoices2[row]
         }
     }
     

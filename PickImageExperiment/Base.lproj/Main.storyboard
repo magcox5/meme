@@ -86,24 +86,26 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ier-Nd-6Cx">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="d9V-Ms-2Ud"/>
                                     <barButtonItem title="Album" id="WTG-1W-uJN">
                                         <connections>
                                             <action selector="pickAnImage" destination="BYZ-38-t0r" id="qDW-GX-Lme"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Vca-3b-XH7"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lUU-mX-5c8"/>
                                     <barButtonItem image="camera" id="neW-nB-PMs">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Ocz-u1-YQu"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="wmg-qh-9k6"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="r30-Kg-KVs"/>
                                     <barButtonItem image="formatText" width="30" id="Hdi-lc-cq1" userLabel="Text Style Button">
                                         <connections>
                                             <action selector="modifyTextStyle:" destination="BYZ-38-t0r" id="oE3-96-HBq"/>
                                             <segue destination="UUS-Sp-GCm" kind="presentation" identifier="modifyTextStyle" id="bgR-io-Gsc"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IQm-t2-Aj6"/>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-Rz-7s5" userLabel="topTitle">
