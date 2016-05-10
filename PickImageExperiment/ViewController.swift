@@ -18,6 +18,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeWidthAttributeName : -3.0
     ]
 
+    let defaultTopText = "TOP"
+    let defaultBottomText = "BOTTOM"
     struct Meme {
         var topText: String?
         var bottomText: String?
@@ -25,17 +27,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var memeImage: UIImage!
     }
     
-    func getText(textField: UITextField) {
-        if textField == topTitle {
-            topTitle.text = "TOP"
-        } else {
-            bottomTitle.text = "BOTTOM"
-        }
-    }
-    
-    func resetTextFields(textField: UITextField) {
+    func resetTextField(textField: UITextField, defaultText: String) {
         // Set Text Field to Original values
-        getText(textField)
+        textField.text = defaultText
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .Center
         textField.textColor = UIColor.whiteColor()
@@ -44,8 +38,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resetTextFields(topTitle)
-        resetTextFields(bottomTitle)
+        resetTextField(topTitle, defaultText: defaultTopText)
+        resetTextField(bottomTitle, defaultText: defaultBottomText)
         topTitle.delegate = self
         bottomTitle.delegate = self
      }
@@ -126,8 +120,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
         // Remove image and restore top and bottom titles to original state
         memeImageView.image = nil
-        resetTextFields(topTitle)
-        resetTextFields(bottomTitle)
+        resetTextField(topTitle, defaultText: defaultTopText)
+        resetTextField(bottomTitle, defaultText: defaultBottomText)
         navigationItem.leftBarButtonItem!.enabled = false
     }
     
@@ -217,7 +211,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // method to pass view controller to textModifyVC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "modifyTextStyle" {
-            let secondViewController = segue.destinationViewController as! modifyTextStyleVC
+            let secondViewController = segue.destinationViewController as! ModifyTextStyleVC
             secondViewController.firstViewController = self
         }
     }

@@ -1,5 +1,5 @@
 //
-//  modifyTextStyleVC.swift
+//  ModifyTextStyleVC.swift
 //  MemeMento
 //
 //  Created by Molly Cox on 5/7/16.
@@ -16,7 +16,7 @@
 
 import UIKit
 
-class modifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ModifyTextStyleVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     //  Declare variables and outlets
     let fontSize: CGFloat = 30.0
