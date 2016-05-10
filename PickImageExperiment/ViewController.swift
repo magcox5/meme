@@ -128,6 +128,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memeImageView.image = nil
         resetTextFields(topTitle)
         resetTextFields(bottomTitle)
+        navigationItem.leftBarButtonItem!.enabled = false
     }
     
 
