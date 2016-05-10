@@ -89,13 +89,13 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="d9V-Ms-2Ud"/>
                                     <barButtonItem title="Album" id="WTG-1W-uJN">
                                         <connections>
-                                            <action selector="pickAnImage" destination="BYZ-38-t0r" id="qDW-GX-Lme"/>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="ZVk-c7-jsz"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="lUU-mX-5c8"/>
                                     <barButtonItem image="camera" id="neW-nB-PMs">
                                         <connections>
-                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="Ocz-u1-YQu"/>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="RaW-jz-JMj"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="r30-Kg-KVs"/>

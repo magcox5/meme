@@ -25,31 +25,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var memeImage: UIImage!
     }
     
-    func getTopText() {
-        topTitle.text = "TOP"
+    func getText(textField: UITextField) {
+        if textField == topTitle {
+            topTitle.text = "TOP"
+        } else {
+            bottomTitle.text = "BOTTOM"
+        }
     }
     
-    func getBottomText() {
-        bottomTitle.text = "BOTTOM"
-    }
-    
-    func resetTextFields() {
-        // Set Text Fields to Original values
-        getTopText()
-        getBottomText()
-        topTitle.defaultTextAttributes = memeTextAttributes
-        bottomTitle.defaultTextAttributes = memeTextAttributes
-        topTitle.textAlignment = .Center
-        topTitle.textColor = UIColor.whiteColor()
-        topTitle.backgroundColor = UIColor.clearColor()
-        bottomTitle.backgroundColor = UIColor.clearColor()
-        bottomTitle.textAlignment = .Center
-        bottomTitle.textColor = UIColor.whiteColor()
+    func resetTextFields(textField: UITextField) {
+        // Set Text Field to Original values
+        getText(textField)
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .Center
+        textField.textColor = UIColor.whiteColor()
+        textField.backgroundColor = UIColor.clearColor()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resetTextFields()
+        resetTextFields(topTitle)
+        resetTextFields(bottomTitle)
         topTitle.delegate = self
         bottomTitle.delegate = self
      }
@@ -82,11 +78,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // Actions
     
-    @IBAction func pickAnImage() {
+    @IBAction func pickAnImage(sender: UIBarButtonItem) {
         let pickerController = UIImagePickerController()
-        pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if sender == chooseButton {
+            pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        } else {
+            pickerController.sourceType = UIImagePickerControllerSourceType.Camera
+        }
         pickerController.delegate = self
-    
         presentViewController(pickerController, animated: true, completion:nil)
     }
     
@@ -102,12 +101,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         navigationItem.leftBarButtonItem!.enabled = true
     }
 
-    @IBAction func pickAnImageFromCamera (sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        imagePicker.delegate = self
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
 
     @IBAction func shareMeme(sender: AnyObject) {
         //Create a variable to generate a memed image
@@ -133,7 +126,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func cancelMeme(sender: UIBarButtonItem) {
         // Remove image and restore top and bottom titles to original state
         memeImageView.image = nil
-        resetTextFields()
+        resetTextFields(topTitle)
+        resetTextFields(bottomTitle)
     }
     
 
