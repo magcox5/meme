@@ -149,7 +149,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func keyboardWillShow(notification: NSNotification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = getKeyboardHeight(notification) * -1
     }
     
     func keyboardWillHide(notification: NSNotification) {
@@ -196,7 +196,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Hide toolbar and navbar
         navigationController?.navigationBarHidden = true
-        navigationController?.setToolbarHidden(true, animated: true)
         toolBar.hidden = true
         
         // Render view to an image
@@ -209,7 +208,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //  Show toolbar and navbar
         navigationController?.navigationBarHidden = false
-        navigationController?.setToolbarHidden(false, animated: false)
         toolBar.hidden = false
         
         return memedImage
