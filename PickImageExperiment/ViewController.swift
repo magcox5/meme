@@ -95,7 +95,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-        memeImageView.image = image
+            memeImageView.image = image
         }
         dismissViewControllerAnimated(true, completion: nil)
         navigationItem.leftBarButtonItem!.enabled = true
@@ -177,7 +177,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         newText = newText.stringByReplacingCharactersInRange(range, withString: string)
         
         // returning true gives the text field permission to change its text
-        return true;
+        return true
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
